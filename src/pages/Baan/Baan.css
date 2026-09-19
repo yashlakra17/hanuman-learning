@@ -1,0 +1,86 @@
+.baan-page {
+  padding: 50px 20px 80px;
+}
+
+.baan-header {
+  max-width: 900px;
+  margin: 0 auto 40px;
+  text-align: center;
+}
+
+.baan-badge {
+  display: inline-block;
+  padding: 8px 18px;
+  border-radius: 30px;
+  background: #fff0d0;
+  color: #a54b00;
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 18px;
+}
+
+.baan-header h1 {
+  font-size: 46px;
+  color: #7b2600;
+  margin-bottom: 15px;
+}
+
+.baan-header p {
+  max-width: 650px;
+  margin: 0 auto;
+  color: #6b5140;
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+.baan-content {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.baan-coming-soon {
+  text-align: center;
+  padding: 70px 30px;
+  border-radius: 25px;
+  background: linear-gradient(135deg, #fff3d6, #ffe3b0);
+  border: 1px solid rgba(139, 69, 19, 0.12);
+  box-shadow: 0 15px 40px rgba(80, 40, 10, 0.08);
+}
+
+.baan-coming-soon span {
+  display: block;
+  font-size: 55px;
+  margin-bottom: 15px;
+}
+
+.baan-coming-soon h2 {
+  color: #7b2600;
+  font-size: 30px;
+  margin-bottom: 12px;
+}
+
+.baan-coming-soon p {
+  color: #6b5140;
+  font-size: 16px;
+}
+
+@media (max-width: 600px) {
+  .baan-page {
+    padding: 35px 15px 60px;
+  }
+
+  .baan-header h1 {
+    font-size: 34px;
+  }
+
+  .baan-header p {
+    font-size: 15px;
+  }
+
+  .baan-coming-soon {
+    padding: 50px 20px;
+  }
+}
+.baan-verse {
+  margin-top: 25px;
+}

@@ -1,0 +1,142 @@
+.verse-card {
+  width: 100%;
+  padding: 24px;
+  border-radius: 20px;
+  background: #ffffff;
+  border: 1px solid rgba(139, 69, 19, 0.1);
+  box-shadow: 0 10px 30px rgba(80, 40, 10, 0.07);
+}
+
+.verse-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.verse-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: #c94f00;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.verse-type {
+  padding: 7px 14px;
+  border-radius: 20px;
+  background: #fff0d0;
+  color: #a54b00;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.verse-hindi {
+  margin-bottom: 18px;
+  color: #4b2d1c;
+  font-size: 23px;
+  line-height: 1.9;
+  font-weight: 600;
+  text-align: center;
+}
+
+.verse-english {
+  padding: 18px;
+  border-radius: 14px;
+  background: #fffaf2;
+  color: #6b5140;
+  font-size: 15px;
+  line-height: 1.7;
+  text-align: center;
+}
+
+.verse-card-actions {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 22px;
+  flex-wrap: wrap;
+}
+
+.verse-btn {
+  border: none;
+  padding: 11px 20px;
+  border-radius: 11px;
+  font-size: 14px;
+  font-weight: 700;
+  transition: 0.25s ease;
+}
+
+.listen-btn {
+  background: #c94f00;
+  color: #ffffff;
+}
+
+.practice-btn {
+  background: #fff0d0;
+  color: #8a3d00;
+}
+
+.verse-btn:hover {
+  transform: translateY(-2px);
+}
+
+.listen-btn:hover {
+  box-shadow: 0 6px 15px rgba(100, 40, 0, 0.2);
+}
+
+@media (max-width: 600px) {
+  .verse-card {
+    padding: 18px;
+  }
+
+  .verse-hindi {
+    font-size: 19px;
+  }
+
+  .verse-card-actions {
+    flex-direction: column;
+  }
+
+  .verse-btn {
+    width: 100%;
+  }
+}
+.stop-btn {
+  background: #6b3a24;
+  color: #ffffff;
+}
+
+.verse-playing {
+  margin-top: 15px;
+  text-align: center;
+  color: #a54b00;
+  font-size: 13px;
+  font-weight: 600;
+}
+.pause-btn {
+  background: #e8b04a;
+  color: #4b2d1c;
+}
+
+.pause-btn:hover {
+  box-shadow: 0 6px 15px rgba(120, 80, 20, 0.2);
+}
+
+.stop-btn {
+  background: #6b3a24;
+  color: #ffffff;
+}
+
+.verse-playing {
+  margin-top: 15px;
+  text-align: center;
+  color: #a54b00;
+  font-size: 13px;
+  font-weight: 600;
+}

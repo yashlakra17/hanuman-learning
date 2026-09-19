@@ -1,0 +1,65 @@
+.translation-card {
+  width: 100%;
+  margin-top: 18px;
+  padding: 22px;
+  border-radius: 18px;
+  background: #ffffff;
+  border: 1px solid rgba(139, 69, 19, 0.1);
+  box-shadow: 0 8px 25px rgba(80, 40, 10, 0.05);
+}
+
+.translation-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.translation-title span {
+  font-size: 22px;
+}
+
+.translation-title h3 {
+  color: #7b2600;
+  font-size: 19px;
+}
+
+.translation-content {
+  display: grid;
+  grid-template-columns: 1fr 1px 1fr;
+  gap: 22px;
+  align-items: stretch;
+}
+
+.translation-hindi span,
+.translation-english span {
+  display: block;
+  margin-bottom: 9px;
+  color: #a54b00;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.translation-hindi p,
+.translation-english p {
+  color: #5c4030;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.translation-divider {
+  width: 1px;
+  background: #ead8c1;
+}
+
+@media (max-width: 650px) {
+  .translation-content {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .translation-divider {
+    width: 100%;
+    height: 1px;
+  }
+}

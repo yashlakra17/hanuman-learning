@@ -1,0 +1,79 @@
+.bhajan-card {
+  padding: 35px;
+  text-align: center;
+
+  border: 1px solid rgba(255, 183, 77, 0.2);
+  border-radius: 24px;
+
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    background 0.3s ease;
+}
+
+.bhajan-card:hover {
+  transform: translateY(-6px);
+
+  border-color: rgba(255, 183, 77, 0.5);
+
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.bhajan-card-icon {
+  display: block;
+  margin-bottom: 15px;
+  font-size: 48px;
+}
+
+.bhajan-card-title {
+  margin: 0 0 12px;
+
+  color: #ffffff;
+  font-size: 26px;
+}
+
+.bhajan-card-description {
+  max-width: 400px;
+  margin: 0 auto 25px;
+
+  color: #cfc4bb;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.bhajan-card-button {
+  padding: 13px 28px;
+
+  border: none;
+  border-radius: 10px;
+
+  background: #ff9f1c;
+  color: #1a0d03;
+
+  font-size: 15px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease;
+}
+
+.bhajan-card-button:hover {
+  transform: translateY(-2px);
+  background: #ffb43b;
+}
+
+@media (max-width: 480px) {
+  .bhajan-card {
+    padding: 30px 20px;
+  }
+
+  .bhajan-card-title {
+    font-size: 23px;
+  }
+}
