@@ -1,8 +1,10 @@
 .chalisa-page {
+  width: 100%;
   padding: 50px 20px 80px;
 }
 
 .chalisa-header {
+  width: 100%;
   max-width: 900px;
   margin: 0 auto 40px;
   text-align: center;
@@ -23,9 +25,11 @@
   font-size: 46px;
   color: #7b2600;
   margin-bottom: 15px;
+  line-height: 1.2;
 }
 
 .chalisa-header p {
+  width: 100%;
   max-width: 650px;
   margin: 0 auto;
   color: #6b5140;
@@ -40,19 +44,79 @@
 }
 
 .chalisa-verse {
+  width: 100%;
   margin-top: 25px;
 }
 
-@media (max-width: 600px) {
+/* Tablet */
+@media (max-width: 700px) {
   .chalisa-page {
-    padding: 35px 15px 60px;
+    padding: 40px 18px 70px;
+  }
+
+  .chalisa-header {
+    margin-bottom: 30px;
   }
 
   .chalisa-header h1 {
-    font-size: 34px;
+    font-size: 40px;
   }
 
   .chalisa-header p {
-    font-size: 15px;
+    font-size: 16px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .chalisa-page {
+    padding: 30px 12px 55px;
+  }
+
+  .chalisa-header {
+    margin-bottom: 25px;
+  }
+
+  .chalisa-badge {
+    padding: 7px 14px;
+    font-size: 12px;
+    margin-bottom: 14px;
+  }
+
+  .chalisa-header h1 {
+    font-size: 32px;
+    margin-bottom: 12px;
+  }
+
+  .chalisa-header p {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .chalisa-content {
+    width: 100%;
+  }
+
+  .chalisa-verse {
+    margin-top: 18px;
+  }
+}
+
+/* Very small phones */
+@media (max-width: 360px) {
+  .chalisa-page {
+    padding: 25px 10px 45px;
+  }
+
+  .chalisa-header h1 {
+    font-size: 28px;
+  }
+
+  .chalisa-header p {
+    font-size: 13px;
+  }
+
+  .chalisa-badge {
+    font-size: 11px;
   }
 }

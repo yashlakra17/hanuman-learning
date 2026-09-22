@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./VerseCard.css";
 
-const VerseCard = ({ verse }) => {
+const VerseCard = ({ verse, onComplete, isCompleted }) => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [isPaused, setIsPaused] = useState(false);
   const [speed, setSpeed] = useState(0.75);
@@ -11,7 +11,8 @@ const VerseCard = ({ verse }) => {
 
   useEffect(() => {
     const loadVoices = () => {
-      const availableVoices = window.speechSynthesis.getVoices();
+      const availableVoices =
+        window.speechSynthesis.getVoices();
 
       const hindiVoices = availableVoices.filter((voice) =>
         voice.lang.toLowerCase().startsWith("hi")
@@ -41,53 +42,19 @@ const VerseCard = ({ verse }) => {
     setIsPaused(false);
   };
 
-  const handleRealAudio = () => {
-    if (!audioRef.current) return;
-
-    window.speechSynthesis.cancel();
-
-    audioRef.current.playbackRate = 1;
-
-    audioRef.current
-      .play()
-      .then(() => {
-        setIsPlaying(true);
-        setIsPaused(false);
-      })
-      .catch(() => {
-        setIsPlaying(false);
-      });
-  };
-
-  const handleAudioPause = () => {
-    if (!audioRef.current) return;
-
-    audioRef.current.pause();
-
-    setIsPlaying(false);
-    setIsPaused(true);
-  };
-
-  const handleAudioResume = () => {
-    if (!audioRef.current) return;
-
-    audioRef.current
-      .play()
-      .then(() => {
-        setIsPlaying(true);
-        setIsPaused(false);
-      })
-      .catch(() => {
-        setIsPlaying(false);
-      });
-  };
-
+  /*
+    Individual verse audio files are not currently stored.
+    Therefore, individual verses use Hindi speech synthesis.
+    The complete Chalisa/Baan audio is handled by AudioPlayer.
+  */
   const handleSpeak = (selectedSpeed) => {
     stopCurrentAudio();
 
     setSpeed(selectedSpeed);
 
-    const speech = new SpeechSynthesisUtterance(verse.hindi);
+    const speech = new SpeechSynthesisUtterance(
+      verse.hindi
+    );
 
     speech.lang = "hi-IN";
     speech.rate = selectedSpeed;
@@ -116,44 +83,37 @@ const VerseCard = ({ verse }) => {
   };
 
   const handleListen = () => {
-    if (verse.audio) {
-      handleRealAudio();
-    } else {
-      handleSpeak(0.75);
-    }
+    handleSpeak(0.75);
   };
 
   const handlePause = () => {
-    if (verse.audio) {
-      handleAudioPause();
-    } else {
-      window.speechSynthesis.pause();
+    window.speechSynthesis.pause();
 
-      setIsPlaying(false);
-      setIsPaused(true);
-    }
+    setIsPlaying(false);
+    setIsPaused(true);
   };
 
   const handleResume = () => {
-    if (verse.audio) {
-      handleAudioResume();
-    } else {
-      window.speechSynthesis.resume();
+    window.speechSynthesis.resume();
 
-      setIsPlaying(true);
-      setIsPaused(false);
-    }
+    setIsPlaying(true);
+    setIsPaused(false);
   };
 
   const handleStop = () => {
     stopCurrentAudio();
   };
 
+  const handleComplete = () => {
+    if (onComplete && !isCompleted) {
+      onComplete(verse.id);
+    }
+  };
+
   return (
     <div className="verse-card">
       <audio
         ref={audioRef}
-        src={verse.audio}
         preload="metadata"
         onEnded={() => {
           setIsPlaying(false);
@@ -162,9 +122,13 @@ const VerseCard = ({ verse }) => {
       />
 
       <div className="verse-card-header">
-        <span className="verse-number">{verse.id}</span>
+        <span className="verse-number">
+          {verse.id}
+        </span>
 
-        <span className="verse-type">{verse.type}</span>
+        <span className="verse-type">
+          {verse.type}
+        </span>
       </div>
 
       <div className="verse-hindi">
@@ -219,6 +183,21 @@ const VerseCard = ({ verse }) => {
           >
             ⏹ Stop
           </button>
+        )}
+
+        {onComplete && !isCompleted && (
+          <button
+            className="verse-btn complete-btn"
+            onClick={handleComplete}
+          >
+            ✅ Mark Complete
+          </button>
+        )}
+
+        {isCompleted && (
+          <div className="completed-message">
+            ✅ Completed
+          </div>
         )}
       </div>
 

@@ -1,10 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./AudioPlayer.css";
 
-const AudioPlayer = ({
-  title = "Hanuman Chalisa",
-  audioSrc,
-}) => {
+const AudioPlayer = ({ title = "Hanuman Chalisa", audioSrc }) => {
   const audioRef = useRef(null);
 
   const [isPlaying, setIsPlaying] = useState(false);
@@ -38,15 +35,9 @@ const AudioPlayer = ({
     audio.addEventListener("ended", handleEnded);
 
     return () => {
-      audio.removeEventListener(
-        "loadedmetadata",
-        handleLoadedMetadata
-      );
+      audio.removeEventListener("loadedmetadata", handleLoadedMetadata);
 
-      audio.removeEventListener(
-        "timeupdate",
-        handleTimeUpdate
-      );
+      audio.removeEventListener("timeupdate", handleTimeUpdate);
 
       audio.removeEventListener("ended", handleEnded);
     };
@@ -140,17 +131,11 @@ const AudioPlayer = ({
     setCurrentTime(newTime);
   };
 
-  const progress = duration
-    ? (currentTime / duration) * 100
-    : 0;
+  const progress = duration ? (currentTime / duration) * 100 : 0;
 
   return (
     <div className="audio-player">
-      <audio
-        ref={audioRef}
-        src={audioSrc}
-        preload="metadata"
-      />
+      <audio ref={audioRef} src={audioSrc} preload="metadata" />
 
       <div className="audio-info">
         <span className="audio-icon">🔊</span>
@@ -162,8 +147,8 @@ const AudioPlayer = ({
             {isPlaying
               ? `Playing at ${speed}x speed`
               : isPaused
-              ? "Paused"
-              : "Listen to Hanuman Chalisa"}
+                ? "Paused"
+                : `Listen to ${title}`}
           </p>
         </div>
       </div>
@@ -213,37 +198,25 @@ const AudioPlayer = ({
 
         <div className="audio-action-buttons">
           {!isPlaying && !isPaused && (
-            <button
-              className="audio-play-btn"
-              onClick={handlePlay}
-            >
+            <button className="audio-play-btn" onClick={handlePlay}>
               ▶ Play
             </button>
           )}
 
           {isPlaying && (
-            <button
-              className="audio-play-btn"
-              onClick={handlePause}
-            >
+            <button className="audio-play-btn" onClick={handlePause}>
               ⏸ Pause
             </button>
           )}
 
           {isPaused && (
-            <button
-              className="audio-play-btn"
-              onClick={handleResume}
-            >
+            <button className="audio-play-btn" onClick={handleResume}>
               ▶ Resume
             </button>
           )}
 
           {(isPlaying || isPaused) && (
-            <button
-              className="audio-stop-btn"
-              onClick={handleStop}
-            >
+            <button className="audio-stop-btn" onClick={handleStop}>
               ⏹ Stop
             </button>
           )}

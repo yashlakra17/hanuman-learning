@@ -1,8 +1,10 @@
 .baan-page {
+  width: 100%;
   padding: 50px 20px 80px;
 }
 
 .baan-header {
+  width: 100%;
   max-width: 900px;
   margin: 0 auto 40px;
   text-align: center;
@@ -23,9 +25,11 @@
   font-size: 46px;
   color: #7b2600;
   margin-bottom: 15px;
+  line-height: 1.2;
 }
 
 .baan-header p {
+  width: 100%;
   max-width: 650px;
   margin: 0 auto;
   color: #6b5140;
@@ -34,53 +38,85 @@
 }
 
 .baan-content {
+  width: 100%;
   max-width: 900px;
   margin: 0 auto;
 }
 
-.baan-coming-soon {
-  text-align: center;
-  padding: 70px 30px;
-  border-radius: 25px;
-  background: linear-gradient(135deg, #fff3d6, #ffe3b0);
-  border: 1px solid rgba(139, 69, 19, 0.12);
-  box-shadow: 0 15px 40px rgba(80, 40, 10, 0.08);
+.baan-verse {
+  width: 100%;
+  margin-top: 25px;
 }
 
-.baan-coming-soon span {
-  display: block;
-  font-size: 55px;
-  margin-bottom: 15px;
-}
-
-.baan-coming-soon h2 {
-  color: #7b2600;
-  font-size: 30px;
-  margin-bottom: 12px;
-}
-
-.baan-coming-soon p {
-  color: #6b5140;
-  font-size: 16px;
-}
-
-@media (max-width: 600px) {
+/* Tablet */
+@media (max-width: 700px) {
   .baan-page {
-    padding: 35px 15px 60px;
+    padding: 40px 18px 70px;
+  }
+
+  .baan-header {
+    margin-bottom: 30px;
   }
 
   .baan-header h1 {
-    font-size: 34px;
+    font-size: 40px;
   }
 
   .baan-header p {
-    font-size: 15px;
-  }
-
-  .baan-coming-soon {
-    padding: 50px 20px;
+    font-size: 16px;
   }
 }
-.baan-verse {
-  margin-top: 25px;
+
+/* Mobile */
+@media (max-width: 600px) {
+  .baan-page {
+    padding: 30px 12px 55px;
+  }
+
+  .baan-header {
+    margin-bottom: 25px;
+  }
+
+  .baan-badge {
+    padding: 7px 14px;
+    font-size: 12px;
+    margin-bottom: 14px;
+  }
+
+  .baan-header h1 {
+    font-size: 32px;
+    margin-bottom: 12px;
+  }
+
+  .baan-header p {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .baan-content {
+    width: 100%;
+  }
+
+  .baan-verse {
+    margin-top: 18px;
+  }
+}
+
+/* Very small phones */
+@media (max-width: 360px) {
+  .baan-page {
+    padding: 25px 10px 45px;
+  }
+
+  .baan-header h1 {
+    font-size: 28px;
+  }
+
+  .baan-header p {
+    font-size: 13px;
+  }
+
+  .baan-badge {
+    font-size: 11px;
+  }
 }

@@ -25,14 +25,18 @@
 }
 
 .translation-content {
-  display: grid;
-  grid-template-columns: 1fr 1px 1fr;
-  gap: 22px;
-  align-items: stretch;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }
 
-.translation-hindi span,
-.translation-english span {
+.translation-section {
+  padding: 18px;
+  border-radius: 14px;
+  background: #fffaf2;
+}
+
+.translation-section > span {
   display: block;
   margin-bottom: 9px;
   color: #a54b00;
@@ -40,26 +44,115 @@
   font-weight: 700;
 }
 
-.translation-hindi p,
-.translation-english p {
+.translation-section p {
+  margin: 0;
   color: #5c4030;
   font-size: 15px;
   line-height: 1.7;
 }
 
-.translation-divider {
-  width: 1px;
-  background: #ead8c1;
+/* Hindi */
+.translation-hindi-text {
+  font-size: 18px !important;
+  line-height: 1.9 !important;
 }
 
-@media (max-width: 650px) {
-  .translation-content {
-    grid-template-columns: 1fr;
-    gap: 18px;
+/* HindEnglish */
+.translation-hindenglish-text {
+  font-size: 16px !important;
+  font-weight: 600;
+  color: #7b4a2d !important;
+}
+
+/* English */
+.translation-section:last-child {
+  background: #fff;
+}
+
+/* Tablet */
+@media (max-width: 700px) {
+  .translation-card {
+    padding: 20px;
   }
 
-  .translation-divider {
-    width: 100%;
-    height: 1px;
+  .translation-section {
+    padding: 16px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .translation-card {
+    padding: 17px;
+    margin-top: 15px;
+    border-radius: 16px;
+  }
+
+  .translation-title {
+    gap: 8px;
+    margin-bottom: 16px;
+  }
+
+  .translation-title span {
+    font-size: 20px;
+  }
+
+  .translation-title h3 {
+    font-size: 17px;
+  }
+
+  .translation-content {
+    gap: 12px;
+  }
+
+  .translation-section {
+    padding: 15px;
+    border-radius: 12px;
+  }
+
+  .translation-section > span {
+    margin-bottom: 7px;
+    font-size: 12px;
+  }
+
+  .translation-section p {
+    font-size: 14px;
+    line-height: 1.65;
+  }
+
+  .translation-hindi-text {
+    font-size: 17px !important;
+    line-height: 1.8 !important;
+  }
+
+  .translation-hindenglish-text {
+    font-size: 15px !important;
+  }
+}
+
+/* Very small phones */
+@media (max-width: 360px) {
+  .translation-card {
+    padding: 14px;
+  }
+
+  .translation-section {
+    padding: 13px;
+  }
+
+  .translation-title h3 {
+    font-size: 16px;
+  }
+
+  .translation-section p {
+    font-size: 13px;
+  }
+
+  .translation-hindi-text {
+    font-size: 16px !important;
+  }
+
+  .translation-hindenglish-text {
+    font-size: 14px !important;
   }
 }

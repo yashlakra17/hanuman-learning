@@ -12,6 +12,7 @@
   align-items: center;
   justify-content: space-between;
   margin-bottom: 20px;
+  gap: 12px;
 }
 
 .verse-number {
@@ -20,6 +21,7 @@
   justify-content: center;
   width: 42px;
   height: 42px;
+  flex-shrink: 0;
   border-radius: 50%;
   background: #c94f00;
   color: #ffffff;
@@ -70,6 +72,7 @@
   font-size: 14px;
   font-weight: 700;
   transition: 0.25s ease;
+  cursor: pointer;
 }
 
 .listen-btn {
@@ -82,6 +85,21 @@
   color: #8a3d00;
 }
 
+.pause-btn {
+  background: #e8b04a;
+  color: #4b2d1c;
+}
+
+.stop-btn {
+  background: #6b3a24;
+  color: #ffffff;
+}
+
+.complete-btn {
+  background: #2e7d32;
+  color: #ffffff;
+}
+
 .verse-btn:hover {
   transform: translateY(-2px);
 }
@@ -90,47 +108,16 @@
   box-shadow: 0 6px 15px rgba(100, 40, 0, 0.2);
 }
 
-@media (max-width: 600px) {
-  .verse-card {
-    padding: 18px;
-  }
-
-  .verse-hindi {
-    font-size: 19px;
-  }
-
-  .verse-card-actions {
-    flex-direction: column;
-  }
-
-  .verse-btn {
-    width: 100%;
-  }
-}
-.stop-btn {
-  background: #6b3a24;
-  color: #ffffff;
-}
-
-.verse-playing {
-  margin-top: 15px;
-  text-align: center;
-  color: #a54b00;
-  font-size: 13px;
-  font-weight: 600;
-}
-.pause-btn {
-  background: #e8b04a;
-  color: #4b2d1c;
-}
-
 .pause-btn:hover {
   box-shadow: 0 6px 15px rgba(120, 80, 20, 0.2);
 }
 
-.stop-btn {
-  background: #6b3a24;
-  color: #ffffff;
+.stop-btn:hover {
+  box-shadow: 0 6px 15px rgba(80, 40, 20, 0.2);
+}
+
+.complete-btn:hover {
+  box-shadow: 0 6px 15px rgba(46, 125, 50, 0.2);
 }
 
 .verse-playing {
@@ -139,4 +126,105 @@
   color: #a54b00;
   font-size: 13px;
   font-weight: 600;
+}
+
+/* Tablet */
+@media (max-width: 700px) {
+  .verse-card {
+    padding: 20px;
+  }
+
+  .verse-hindi {
+    font-size: 21px;
+  }
+
+  .verse-card-actions {
+    gap: 9px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .verse-card {
+    padding: 17px;
+    border-radius: 16px;
+  }
+
+  .verse-card-header {
+    margin-bottom: 17px;
+  }
+
+  .verse-number {
+    width: 38px;
+    height: 38px;
+    font-size: 14px;
+  }
+
+  .verse-type {
+    padding: 6px 10px;
+    font-size: 11px;
+  }
+
+  .verse-hindi {
+    font-size: 18px;
+    line-height: 1.8;
+    margin-bottom: 15px;
+  }
+
+  .verse-english {
+    padding: 15px;
+    font-size: 14px;
+    line-height: 1.65;
+  }
+
+  .verse-card-actions {
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 18px;
+  }
+
+  .verse-btn {
+    width: 100%;
+    padding: 11px 14px;
+    font-size: 13px;
+  }
+}
+
+/* Very small phones */
+@media (max-width: 360px) {
+  .verse-card {
+    padding: 14px;
+  }
+
+  .verse-hindi {
+    font-size: 17px;
+  }
+
+  .verse-english {
+    padding: 13px;
+    font-size: 13px;
+  }
+
+  .verse-type {
+    font-size: 10px;
+  }
+}
+.completed-message {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 11px 20px;
+  border-radius: 11px;
+  background: #e8f5e9;
+  color: #2e7d32;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+@media (max-width: 600px) {
+  .completed-message {
+    width: 100%;
+    padding: 11px 14px;
+    font-size: 13px;
+  }
 }

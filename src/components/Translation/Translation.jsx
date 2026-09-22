@@ -1,24 +1,31 @@
 import React from "react";
 import "./Translation.css";
 
-const Translation = ({ hindi, english }) => {
+const Translation = ({ hindi, hindEnglish, english }) => {
   return (
     <div className="translation-card">
       <div className="translation-title">
         <span>📖</span>
-        <h3>Translation</h3>
+        <h3>Meaning & Translation</h3>
       </div>
 
       <div className="translation-content">
-        <div className="translation-hindi">
+        <div className="translation-section">
           <span>हिंदी</span>
-          <p>{hindi}</p>
+          <p className="translation-hindi-text">
+            {hindi}
+          </p>
         </div>
 
-        <div className="translation-divider"></div>
+        <div className="translation-section">
+          <span>🔤 HindEnglish</span>
+          <p className="translation-hindenglish-text">
+            {hindEnglish}
+          </p>
+        </div>
 
-        <div className="translation-english">
-          <span>English Meaning</span>
+        <div className="translation-section">
+          <span>🇬🇧 English Meaning</span>
           <p>{english}</p>
         </div>
       </div>

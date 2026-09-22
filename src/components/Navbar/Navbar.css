@@ -1,5 +1,5 @@
 .navbar {
-  height: 70px;
+  min-height: 70px;
   width: 100%;
   display: flex;
   align-items: center;
@@ -19,6 +19,7 @@
   gap: 8px;
   font-size: 20px;
   font-weight: 700;
+  white-space: nowrap;
 }
 
 .navbar-links {
@@ -32,28 +33,61 @@
   font-weight: 600;
   transition: 0.25s ease;
   padding: 8px 0;
+  white-space: nowrap;
 }
 
 .navbar-links a:hover {
   color: #ffd27a;
 }
 
-@media (max-width: 650px) {
+/* Tablet */
+@media (max-width: 800px) {
   .navbar {
-    height: auto;
-    min-height: 70px;
-    padding: 15px 20px;
-    flex-direction: column;
-    gap: 12px;
+    padding: 15px 25px;
   }
 
   .navbar-links {
     gap: 18px;
-    flex-wrap: wrap;
+  }
+}
+
+/* Mobile */
+@media (max-width: 650px) {
+  .navbar {
+    padding: 14px 15px;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .navbar-logo {
+    font-size: 18px;
+  }
+
+  .navbar-links {
+    width: 100%;
+    gap: 8px;
     justify-content: center;
+    flex-wrap: wrap;
   }
 
   .navbar-links a {
-    font-size: 14px;
+    padding: 7px 10px;
+    font-size: 13px;
+  }
+}
+
+/* Very small phones */
+@media (max-width: 380px) {
+  .navbar-logo {
+    font-size: 17px;
+  }
+
+  .navbar-links {
+    gap: 4px;
+  }
+
+  .navbar-links a {
+    padding: 6px 7px;
+    font-size: 12px;
   }
 }

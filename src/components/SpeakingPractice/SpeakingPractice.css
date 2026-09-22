@@ -46,22 +46,106 @@
   text-align: center;
 }
 
-.start-practice-btn {
-  display: block;
-  margin: 0 auto;
+.practice-actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 5px;
+}
+
+.start-practice-btn,
+.stop-practice-btn {
   border: none;
   padding: 12px 22px;
   border-radius: 12px;
-  background: #c94f00;
   color: #ffffff;
   font-size: 14px;
   font-weight: 700;
+  cursor: pointer;
   transition: 0.25s ease;
 }
 
-.start-practice-btn:hover {
+.start-practice-btn {
+  background: #c94f00;
+}
+
+.stop-practice-btn {
+  background: #6b3a24;
+}
+
+.start-practice-btn:hover,
+.stop-practice-btn:hover {
   transform: translateY(-2px);
   box-shadow: 0 6px 15px rgba(100, 40, 0, 0.2);
+}
+
+.listening-status {
+  margin-top: 15px;
+  padding: 12px;
+  border-radius: 10px;
+  background: #fff0d0;
+  color: #a54b00;
+  text-align: center;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.spoken-result {
+  margin-top: 18px;
+  padding: 18px;
+  border-radius: 12px;
+  background: #ffffff;
+  border: 1px solid #ead8c1;
+}
+
+.spoken-result h4 {
+  margin-bottom: 8px;
+  color: #7b2600;
+  font-size: 15px;
+}
+
+.spoken-result p {
+  color: #5c4030;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.match-result {
+  margin-top: 18px;
+  padding: 20px;
+  border-radius: 14px;
+  background: #ffffff;
+  text-align: center;
+  border: 1px solid #ead8c1;
+}
+
+.match-result h4 {
+  margin-bottom: 10px;
+  color: #7b2600;
+  font-size: 16px;
+}
+
+.match-score {
+  font-size: 36px;
+  font-weight: 800;
+  color: #c94f00;
+  margin-bottom: 8px;
+}
+
+.match-result p {
+  color: #6b5140;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.practice-error {
+  margin-top: 15px;
+  padding: 12px;
+  border-radius: 10px;
+  background: #fff0f0;
+  color: #a33a2b;
+  text-align: center;
+  font-size: 13px;
+  line-height: 1.5;
 }
 
 .practice-note {
@@ -71,21 +155,83 @@
   font-size: 12px;
 }
 
+/* Tablet */
+@media (max-width: 700px) {
+  .speaking-practice {
+    padding: 20px;
+  }
+
+  .practice-text {
+    font-size: 18px;
+  }
+}
+
+/* Mobile */
 @media (max-width: 600px) {
   .speaking-practice {
     padding: 17px;
+    border-radius: 16px;
   }
 
   .practice-header {
     align-items: flex-start;
     flex-direction: column;
+    gap: 10px;
   }
 
-  .practice-text {
+  .practice-header h3 {
     font-size: 17px;
   }
 
-  .start-practice-btn {
+  .practice-header p {
+    font-size: 12px;
+  }
+
+  .practice-status {
+    align-self: flex-start;
+  }
+
+  .practice-text {
+    padding: 15px;
+    font-size: 17px;
+    line-height: 1.75;
+  }
+
+  .practice-actions {
     width: 100%;
+  }
+
+  .start-practice-btn,
+  .stop-practice-btn {
+    width: 100%;
+    padding: 12px 15px;
+  }
+
+  .spoken-result,
+  .match-result {
+    padding: 15px;
+  }
+
+  .spoken-result p {
+    font-size: 14px;
+  }
+
+  .match-score {
+    font-size: 32px;
+  }
+}
+
+/* Very small phones */
+@media (max-width: 360px) {
+  .speaking-practice {
+    padding: 14px;
+  }
+
+  .practice-text {
+    font-size: 16px;
+  }
+
+  .match-score {
+    font-size: 29px;
   }
 }

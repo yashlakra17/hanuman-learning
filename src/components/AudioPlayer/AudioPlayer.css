@@ -40,8 +40,6 @@
   font-size: 13px;
 }
 
-/* Progress */
-
 .audio-progress {
   width: 100%;
   display: flex;
@@ -76,8 +74,6 @@
   );
 }
 
-/* Chrome / Edge / Safari */
-
 .audio-progress input[type="range"]::-webkit-slider-thumb {
   appearance: none;
   width: 16px;
@@ -88,8 +84,6 @@
   box-shadow: 0 2px 6px rgba(80, 40, 10, 0.25);
 }
 
-/* Firefox */
-
 .audio-progress input[type="range"]::-moz-range-thumb {
   width: 16px;
   height: 16px;
@@ -98,8 +92,6 @@
   border: 3px solid #ffffff;
   box-shadow: 0 2px 6px rgba(80, 40, 10, 0.25);
 }
-
-/* Controls */
 
 .audio-controls {
   display: flex;
@@ -112,6 +104,7 @@
   display: flex;
   align-items: center;
   gap: 5px;
+  flex-wrap: wrap;
 }
 
 .speed-controls span {
@@ -136,19 +129,17 @@
   border-color: #c94f00;
 }
 
-/* Play / Pause / Resume */
-
 .audio-action-buttons {
   display: flex;
   align-items: center;
   gap: 8px;
 }
 
-.audio-play-btn {
+.audio-play-btn,
+.audio-stop-btn {
   border: none;
   padding: 11px 20px;
   border-radius: 12px;
-  background: #c94f00;
   color: #ffffff;
   font-size: 14px;
   font-weight: 700;
@@ -156,30 +147,28 @@
   transition: 0.25s ease;
 }
 
-.audio-play-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 15px rgba(100, 40, 0, 0.2);
+.audio-play-btn {
+  background: #c94f00;
 }
 
 .audio-stop-btn {
-  border: none;
-  padding: 11px 18px;
-  border-radius: 12px;
   background: #6b3a24;
-  color: #ffffff;
-  font-size: 14px;
-  font-weight: 700;
-  cursor: pointer;
-  transition: 0.25s ease;
+}
+
+.audio-play-btn:hover,
+.audio-stop-btn:hover {
+  transform: translateY(-2px);
+}
+
+.audio-play-btn:hover {
+  box-shadow: 0 6px 15px rgba(100, 40, 0, 0.2);
 }
 
 .audio-stop-btn:hover {
-  transform: translateY(-2px);
   box-shadow: 0 6px 15px rgba(80, 40, 20, 0.2);
 }
 
-/* Mobile */
-
+/* Tablet */
 @media (max-width: 750px) {
   .audio-player {
     padding: 18px;
@@ -203,9 +192,34 @@
   }
 }
 
+/* Mobile */
 @media (max-width: 500px) {
+  .audio-player {
+    padding: 16px;
+    gap: 15px;
+    border-radius: 15px;
+  }
+
+  .audio-info {
+    gap: 11px;
+  }
+
+  .audio-icon {
+    width: 42px;
+    height: 42px;
+    font-size: 19px;
+  }
+
+  .audio-info h3 {
+    font-size: 16px;
+  }
+
+  .audio-info p {
+    font-size: 12px;
+  }
+
   .audio-progress {
-    gap: 7px;
+    gap: 6px;
   }
 
   .audio-progress span {
@@ -213,7 +227,49 @@
     font-size: 11px;
   }
 
-  .audio-info h3 {
-    font-size: 16px;
+  .speed-controls {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .speed-controls span {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 3px;
+  }
+
+  .speed-controls button {
+    flex: 1;
+    min-width: 65px;
+    padding: 8px 6px;
+  }
+
+  .audio-action-buttons {
+    gap: 7px;
+  }
+
+  .audio-play-btn,
+  .audio-stop-btn {
+    padding: 11px 10px;
+    font-size: 13px;
+  }
+}
+
+/* Very small phones */
+@media (max-width: 360px) {
+  .audio-progress span {
+    min-width: 30px;
+    font-size: 10px;
+  }
+
+  .speed-controls button {
+    min-width: 55px;
+    font-size: 11px;
+  }
+
+  .audio-play-btn,
+  .audio-stop-btn {
+    font-size: 12px;
+    padding: 10px 7px;
   }
 }

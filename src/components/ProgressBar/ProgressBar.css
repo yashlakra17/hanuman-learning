@@ -12,6 +12,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 10px;
   margin-bottom: 10px;
   color: #5c4030;
   font-size: 14px;
@@ -40,8 +41,54 @@
   font-size: 13px;
 }
 
+/* Tablet */
+@media (max-width: 700px) {
+  .progress-container {
+    padding: 18px;
+  }
+
+  .progress-info {
+    font-size: 13px;
+  }
+}
+
+/* Mobile */
 @media (max-width: 600px) {
   .progress-container {
+    margin-bottom: 20px;
     padding: 16px;
+    border-radius: 14px;
+  }
+
+  .progress-info {
+    font-size: 13px;
+  }
+
+  .progress-track {
+    height: 9px;
+  }
+
+  .progress-text {
+    margin-top: 8px;
+    font-size: 12px;
+  }
+}
+
+/* Very small phones */
+@media (max-width: 360px) {
+  .progress-container {
+    padding: 14px;
+  }
+
+  .progress-info {
+    font-size: 12px;
+  }
+
+  .progress-track {
+    height: 8px;
+  }
+
+  .progress-text {
+    font-size: 11px;
   }
 }
